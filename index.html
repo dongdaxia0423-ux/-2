@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工業計時儀 Pro V9.0 - 官方下載頁</title>
+    <style>
+        body {
+            background-color: #1e272e;
+            color: #d2dae2;
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #2d3436;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            text-align: center;
+            border: 2px solid #4b6584;
+            max-width: 550px;
+        }
+        .lcd-preview {
+            background: #000;
+            color: #26de81;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 3rem;
+            padding: 25px;
+            border-radius: 8px;
+            border: 4px ridge #d2dae2;
+            margin: 20px 0;
+            text-shadow: 0 0 15px #26de81;
+        }
+        h1 { color: #f7b731; margin-bottom: 0.5rem; }
+        .version-tag { color: #a5b1c2; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .free-badge {
+            background: #eb4d4b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .download-btn {
+            background-color: #26de81;
+            color: #1e272e;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            transition: transform 0.2s, background 0.2s;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(38, 222, 129, 0.3);
+        }
+        .download-btn:hover {
+            background-color: #20bf6b;
+            transform: scale(1.05);
+        }
+        .features {
+            text-align: left;
+            margin-top: 25px;
+            font-size: 0.95rem;
+            border-top: 1px solid #4b6584;
+            padding-top: 20px;
+        }
+        .tag { color: #26de81; font-weight: bold; margin-right: 8px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="free-badge">FREE SERVICE</div>
+        <h1>工業計時儀 Pro</h1>
+        <div class="version-tag">巔峰版 V9.0 | 支援夜間模式與自訂鈴聲</div>
+        
+        <div class="lcd-preview" id="clock">00:00:00</div>
+
+        <div class="features">
+            <div><span class="tag">✔</span> <b>夜間切換</b>：支援深色/淺色工業主題</div>
+            <div><span class="tag">✔</span> <b>自訂鈴聲</b>：多組高分貝工業提醒音</div>
+            <div><span class="tag">✔</span> <b>全免服務</b>：當前版本完全免費下載使用</div>
+            <div><span class="tag">✔</span> <b>智能修正</b>：防呆輸入邏輯，自動校準數值</div>
+        </div>
+
+        <a href="工業計時儀_Pro.exe" class="download-btn" download>立即免費下載 .EXE</a>
+        
+        <p style="font-size: 0.7rem; margin-top: 30px; color: #7f8c8d;">支援系統：Windows 10 / 11</p>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
